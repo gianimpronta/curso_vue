@@ -1,0 +1,27 @@
+<meta charset="UTF8">
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="http://unpkg.com/vue"></script>
+
+<div id="app">
+	<ul>
+		<li v-for='(cor, i) in cores' :key='cor'><strong>{{i + 1}}</strong> - {{ cor }}</li>
+	</ul>
+	<button @click='cores.push("branca")'>Adicionar</button>
+
+
+</div>
+
+<script>
+	new Vue({
+		el: "#app",
+		data: {
+			cores: ['azul', 'amarelo', 'vermelho', 'verde'],
+		}	
+		
+	})
+</script>
+<style>
+	ul {
+		list-style: none;
+	}
+</style>

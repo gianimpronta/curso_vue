@@ -1,0 +1,28 @@
+<meta charset="UTF8">
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="http://unpkg.com/vue"></script>
+
+<div id="app">
+	<ul>
+		<li v-for='(cor, i) in cores'><strong>{{i + 1}}</strong> - {{ cor }}</li>
+	</ul>
+</div>
+
+<script>
+	new Vue({
+		el: "#app",
+		data: {
+			cores: ['azul', 'amarelo', 'vermelho', 'verde'],
+			pessoas: [
+				{nome: 'Maria', idade: 12, peso: 20},
+				{nome: 'João', idade: 15, peso: 50}
+			]
+		}	
+		
+	})
+</script>
+<style>
+	ul {
+		list-style: none;
+	}
+</style>

@@ -1,0 +1,20 @@
+<meta charset="UTF8">
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="http://unpkg.com/vue"></script>
+<div id="app">
+	<p v-if='logado'>Usuário logado: {{nome}}</p>
+	<p v-else>Nenhum usuário logado</p>
+	<p v-if='!logado'>Nenhum usuário logado</p>
+	<button @click="logado = !logado">{{ logado? 'Sair' : 'Entrar' }}</button>
+</div>
+
+<script>
+	new Vue({
+		el: "#app",
+		data: {
+			logado: false,
+			nome: 'Mary'
+		}	
+		
+	})
+</script>
