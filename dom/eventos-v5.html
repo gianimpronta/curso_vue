@@ -1,0 +1,43 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+<div id="app">
+  <p>{{ contador }}</p>
+  <p>{{ passo }}</p>
+  <label for="passo">Passo:</label>
+  <input type="number" id="passo" v-model="passo">
+  <button v-on:click="somar(5, $event)">Somar</button>
+  <p v-on:mousemove="atualizaXY">
+    Mouse está em x: {{ x }} e y: {{ y }}
+    <span v-on:mousemove.stop="">PARAR AQUI!!!!</span>
+  </p>
+  <a href="http://www.google.com" v-on:click.prevent="naoNavegar">Google</a>
+  <hr>
+  <input type="text"  v-on:keyup.enter="teclaPressionada">
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      contador: 0,
+      passo: 1,
+      x: 0,
+      y: 0,
+    },
+    methods: {
+      somar(passo, event){
+        console.log(passo, event)
+        this.contador += Number(this.passo);
+      },
+      atualizaXY(e){
+        this.x = e.clientX
+        this.y = e.clientY
+      },
+      naoNavegar(event){
+        console.log(event)
+      },
+      teclaPressionada(){
+        alert('Tecla pressionada')
+      }
+    }
+  })
+</script>
