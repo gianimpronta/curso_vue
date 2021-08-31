@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<div id="app">	
+	<input type="text" v-model='novoItem' v-on:keyup.enter='addNovoItem'>
+	<ul>
+		<li v-for='item in lista'>{{ item.texto }}</li>
+	</ul>
+</div>
+
+<script>
+	new Vue({
+		el: "#app",
+		data: {
+			lista: [
+				{texto: 'macarrão'},
+				{texto: 'molho de tomate'}
+			],
+			novoItem: '',
+		},
+		methods:{
+			saudacao(){
+				return 'Buenos dias, seu '+ this.titulo;
+			},
+			addNovoItem(){
+				this.lista.push({texto: this.novoItem});
+				this.novoItem=''
+			}
+		}
+	})
+</script>
