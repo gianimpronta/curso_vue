@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="https://unpkg.com/vue"></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="app1">
+		{{ titulo }}
+		<button @click='alterar'>Alterar</button>
+		
+	</div>
+	<script>
+		const vm1 = new Vue({
+			el: "#app1",
+			data: {
+				titulo: 'App 1'
+			},
+			methods: {
+				alterar(){
+					this.titulo+= '!!!!!!!!!!!'
+				}
+			},
+		})
+	</script>
+</body>
+</html>
